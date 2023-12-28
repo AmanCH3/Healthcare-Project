@@ -42,6 +42,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanel2" max="32767" attributes="0"/>
                   <Component id="jPanel3" max="32767" attributes="0"/>
@@ -67,13 +68,13 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
                   <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="553" max="32767" attributes="0"/>
+                  <EmptySpace pref="546" max="32767" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="171" max="-2" attributes="0"/>
               </Group>
@@ -82,14 +83,16 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel11" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="jLabel10" min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel9" alignment="0" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel9" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="jLabel11" alignment="1" min="-2" pref="34" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="8" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -98,28 +101,28 @@
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\workflowLogo.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\workflowLogo.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel9">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\R 16.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\R 16.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel10">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\38-385643_notification-icon-png 2.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\38-385643_notification-icon-png 2.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel11">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\Profile-Avatar-PNG-Picture 7.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\Profile-Avatar-PNG-Picture 7.png"/>
             </Property>
           </Properties>
         </Component>
@@ -189,7 +192,7 @@
                   <Component id="Analytics1" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                   <Component id="Analytics2" min="-2" pref="50" max="-2" attributes="0"/>
-                  <EmptySpace pref="38" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -204,7 +207,7 @@
               <Color blue="ff" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\dashboardIcon.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\dashboardIcon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Dashboard"/>
           </Properties>
@@ -223,7 +226,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\myScheduleIcon.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\myScheduleIcon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="My Schudule"/>
           </Properties>
@@ -234,7 +237,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\prescriptionIcon.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\prescriptionIcon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Prescription"/>
           </Properties>
@@ -253,7 +256,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\detailsIcons.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\detailsIcons.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Patients Details&#xa;"/>
           </Properties>
@@ -264,7 +267,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\analyticsIcon.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\analyticsIcon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Analytics"/>
           </Properties>
@@ -275,7 +278,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\feedbackIcon.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\feedbackIcon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Feedbacks"/>
           </Properties>
@@ -286,7 +289,7 @@
               <Font name="Segoe UI" size="18" style="1"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflow\src\main\java\icons\logOutIcon.png"/>
+              <Image iconType="2" name="C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Images_and_icons\logOutIcon.png"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Log Out"/>
           </Properties>
