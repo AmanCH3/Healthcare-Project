@@ -4,17 +4,22 @@
  */
 package View;
 
+
 /**
  *
  * @author Dell
  */
 public class Dashboard extends javax.swing.JFrame {
 
+
     /**
      * Creates new form Dashboard
      */
     public Dashboard() {
         initComponents();
+        this.setExtendedState(Dashboard.MAXIMIZED_BOTH);
+        mainPanel();
+        
     }
 
     /**
@@ -35,21 +40,21 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        ScheduleBtn = new javax.swing.JLabel();
+        PrescriptionBtn = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        Analytics = new javax.swing.JLabel();
-        Analytics1 = new javax.swing.JLabel();
-        Analytics2 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        DetailsBtn = new javax.swing.JLabel();
+        AnalyticsBtn = new javax.swing.JLabel();
+        FeedbackBtn = new javax.swing.JLabel();
+        LogOutBtn = new javax.swing.JLabel();
+        Layer = new javax.swing.JLayeredPane();
 
         jLabel5.setText("jLabel5");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(204, 204, 204)));
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\workflowLogo.png")); // NOI18N
 
@@ -65,8 +70,8 @@ public class Dashboard extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(59, 59, 59)
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 546, Short.MAX_VALUE)
+                .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 119, Short.MAX_VALUE)
+                .addGap(513, 513, 513)
                 .addComponent(jLabel9)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel10)
@@ -84,43 +89,78 @@ public class Dashboard extends javax.swing.JFrame {
                         .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(8, Short.MAX_VALUE))
+                .addGap(8, 8, 8))
         );
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 28)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\dashboardIcon.png")); // NOI18N
         jLabel1.setText("Dashboard");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel2.setForeground(new java.awt.Color(102, 102, 102));
         jLabel2.setText("my profile");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\myScheduleIcon.png")); // NOI18N
-        jLabel3.setText("My Schudule");
+        ScheduleBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        ScheduleBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\myScheduleIcon.png")); // NOI18N
+        ScheduleBtn.setText("My Schedule");
+        ScheduleBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ScheduleBtnMouseClicked(evt);
+            }
+        });
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\prescriptionIcon.png")); // NOI18N
-        jLabel4.setText("Prescription");
+        PrescriptionBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        PrescriptionBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\prescriptionIcon.png")); // NOI18N
+        PrescriptionBtn.setText("Prescription");
+        PrescriptionBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PrescriptionBtnMouseClicked(evt);
+            }
+        });
 
         jLabel6.setForeground(new java.awt.Color(102, 102, 102));
         jLabel6.setText("others");
 
-        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\detailsIcons.png")); // NOI18N
-        jLabel7.setText("Patients Details\n");
+        DetailsBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        DetailsBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\detailsIcons.png")); // NOI18N
+        DetailsBtn.setText("Patients Details\n");
+        DetailsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DetailsBtnMouseClicked(evt);
+            }
+        });
 
-        Analytics.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Analytics.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\analyticsIcon.png")); // NOI18N
-        Analytics.setText("Analytics");
+        AnalyticsBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        AnalyticsBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\analyticsIcon.png")); // NOI18N
+        AnalyticsBtn.setText("Analytics");
+        AnalyticsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AnalyticsBtnMouseClicked(evt);
+            }
+        });
 
-        Analytics1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Analytics1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\feedbackIcon.png")); // NOI18N
-        Analytics1.setText("Feedbacks");
+        FeedbackBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        FeedbackBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\feedbackIcon.png")); // NOI18N
+        FeedbackBtn.setText("Feedbacks");
+        FeedbackBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FeedbackBtnMouseClicked(evt);
+            }
+        });
 
-        Analytics2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        Analytics2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\logOutIcon.png")); // NOI18N
-        Analytics2.setText("Log Out");
+        LogOutBtn.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        LogOutBtn.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\logOutIcon.png")); // NOI18N
+        LogOutBtn.setText("Log Out");
+        LogOutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LogOutBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -129,65 +169,62 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel2))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Analytics, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Analytics1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Analytics2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(21, 21, 21))
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(125, 125, 125))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(13, 13, 13)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ScheduleBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PrescriptionBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AnalyticsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FeedbackBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(LogOutBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DetailsBtn, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addComponent(jLabel1)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(jLabel2)
+                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 22, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ScheduleBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(PrescriptionBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(DetailsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
-                .addComponent(Analytics, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AnalyticsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
-                .addComponent(Analytics1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FeedbackBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
                 .addGap(14, 14, 14)
-                .addComponent(Analytics2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addComponent(LogOutBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 49, Short.MAX_VALUE)
+                .addGap(24, 24, 24))
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 51, 51));
+        Layer.setBackground(new java.awt.Color(102, 102, 0));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        javax.swing.GroupLayout LayerLayout = new javax.swing.GroupLayout(Layer);
+        Layer.setLayout(LayerLayout);
+        LayerLayout.setHorizontalGroup(
+            LayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 759, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        LayerLayout.setVerticalGroup(
+            LayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 530, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -197,22 +234,114 @@ public class Dashboard extends javax.swing.JFrame {
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(9, 9, 9)
+                .addComponent(Layer))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(Layer)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    private void switchToPanel(javax.swing.JPanel panel) {
+        Layer.removeAll();
+        Layer.add(panel);
+        panel.setBounds(0, 0, 770, 530);
+        panel.setVisible(true);
+        Layer.repaint();
+        Layer.revalidate();
+    }
+   
+    private void ScheduleBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScheduleBtnMouseClicked
+        ScheduleBtn.setForeground(new java.awt.Color(0, 0, 255)); 
+        PrescriptionBtn.setForeground(new java.awt.Color(0, 0, 0));
+        DetailsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
+        LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
+        MySchedulePanel mySchedulePanel = new MySchedulePanel();
+        switchToPanel(mySchedulePanel);
+        
+    }//GEN-LAST:event_ScheduleBtnMouseClicked
 
+    private void PrescriptionBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrescriptionBtnMouseClicked
+        // TODO add your handling code here:
+        ScheduleBtn.setForeground(new java.awt.Color(0, 0, 0)); 
+        PrescriptionBtn.setForeground(new java.awt.Color(0, 0, 255));
+        DetailsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
+        LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
+        PrescriptionPanel prescriptionPanel = new PrescriptionPanel();
+        switchToPanel(prescriptionPanel);
+    }//GEN-LAST:event_PrescriptionBtnMouseClicked
+
+    private void DetailsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DetailsBtnMouseClicked
+        // TODO add your handling code here:
+        ScheduleBtn.setForeground(new java.awt.Color(0, 0, 0)); 
+        PrescriptionBtn.setForeground(new java.awt.Color(0, 0, 0));
+        DetailsBtn.setForeground(new java.awt.Color(0, 0, 255));
+        AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
+        LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
+        PatientsDetailsPanel detailsPanel = new PatientsDetailsPanel();
+        switchToPanel(detailsPanel);
+//        DetailsBtn.setIcon(new javax.swing.ImageIcon("path_to_black_icon"));
+       
+    }//GEN-LAST:event_DetailsBtnMouseClicked
+
+    private void AnalyticsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnalyticsBtnMouseClicked
+        // TODO add your handling code here:
+        ScheduleBtn.setForeground(new java.awt.Color(0, 0, 0)); 
+        PrescriptionBtn.setForeground(new java.awt.Color(0, 0, 0));
+        DetailsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 255));
+        FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
+        LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AnalyticsPanel analyticsPanel = new AnalyticsPanel();
+        switchToPanel(analyticsPanel);
+    }//GEN-LAST:event_AnalyticsBtnMouseClicked
+
+    private void FeedbackBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FeedbackBtnMouseClicked
+        // TODO add your handling code here:
+        ScheduleBtn.setForeground(new java.awt.Color(0, 0, 0)); 
+        PrescriptionBtn.setForeground(new java.awt.Color(0, 0, 0));
+        DetailsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        FeedbackBtn.setForeground(new java.awt.Color(0, 0, 255));
+        LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
+        FeedbacksPanel feedbacksPanel = new FeedbacksPanel();
+        switchToPanel(feedbacksPanel);
+        
+    }//GEN-LAST:event_FeedbackBtnMouseClicked
+
+    private void LogOutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LogOutBtnMouseClicked
+        // TODO add your handling code here:
+        ScheduleBtn.setForeground(new java.awt.Color(0, 0, 0)); 
+        PrescriptionBtn.setForeground(new java.awt.Color(0, 0, 0));
+        DetailsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
+        FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
+        LogOutBtn.setForeground(new java.awt.Color(0, 0, 255));
+        LogOutPanel logOutPanel = new LogOutPanel();
+        switchToPanel(logOutPanel);
+    }//GEN-LAST:event_LogOutBtnMouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        mainPanel();
+       
+    }//GEN-LAST:event_jLabel1MouseClicked
+    void mainPanel(){
+        InitialPanel initialPanel = new InitialPanel();
+        switchToPanel(initialPanel);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -243,28 +372,31 @@ public class Dashboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Dashboard().setVisible(true);
+            new Dashboard().setVisible(true);
+         
+            
             }
         });
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Analytics;
-    private javax.swing.JLabel Analytics1;
-    private javax.swing.JLabel Analytics2;
+    private javax.swing.JLabel AnalyticsBtn;
+    private javax.swing.JLabel DetailsBtn;
+    private javax.swing.JLabel FeedbackBtn;
+    private javax.swing.JLayeredPane Layer;
+    private javax.swing.JLabel LogOutBtn;
+    private javax.swing.JLabel PrescriptionBtn;
+    private javax.swing.JLabel ScheduleBtn;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     // End of variables declaration//GEN-END:variables
 }

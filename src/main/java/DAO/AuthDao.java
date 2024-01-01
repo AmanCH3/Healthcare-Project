@@ -27,12 +27,7 @@ public class AuthDao extends SQLConnection {
            ps.setString(4,user.getDateOfBirth());
            ps.setString(5,user.getPhone());
            ps.setString(6,user.getAddress());
-           System.out.println(user.getName());
-           System.out.println(user.getEmail());
-           System.out.println(user.getPassword());
-            System.out.println(user.getDateOfBirth());
-             System.out.println(user.getPhone());
-              System.out.println(user.getAddress());
+         
             
            
 //           // to check the insertion on the table
@@ -57,4 +52,5 @@ public class AuthDao extends SQLConnection {
     public void SignUp(String name, String email, String password, String dateOfBirth, String phone, String address) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+    
 }

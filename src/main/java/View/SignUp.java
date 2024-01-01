@@ -58,7 +58,7 @@ public class SignUp extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 204, 255));
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -308,19 +308,74 @@ public class SignUp extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(rootPane, "Please fill in all fields");
         return;
         }
+         if (!isValidEmail(email)) {
+        JOptionPane.showMessageDialog(rootPane, "Please enter a valid email address");
+        return;
+        }
+
+        // Date format validation (assuming dob is in "YYYY-MM-DD" format)
+        if (!isValidDateFormat(dob)) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter a valid date (YYYY-MM-DD)");
+            return;
+        }
+
+        // Phone number format validation (assuming 10-digit phone number)
+        if (!isValidPhoneNumber(phone)) {
+            JOptionPane.showMessageDialog(rootPane, "Please enter a valid 10-digit phone number");
+            return;
+        }
+        if (!isValidPassword(password)){
+            JOptionPane.showMessageDialog(rootPane, "our password should be at least 8 "
+                    + "characters long and contain a mix of uppercase letters, lowercase letters, numbers, "
+                    + "and special characters.");
+            return;
+        }
+        
+        
         
         SignUpModel sign = new SignUpModel(email, password, username,dob,phone,address);
         
         boolean isRegistered = auth.SignUp(sign);
         if(isRegistered){
            JOptionPane.showMessageDialog(rootPane, "Registration Successful");
-            System.out.println("Insert success");
+           dispose();
+
+            // Open a new instance of the Signup page
+            java.awt.EventQueue.invokeLater(() -> {
+                new SignUp().setVisible(true);
+            });
         }else{
             JOptionPane.showMessageDialog(rootPane, "Registration Failure");
-        System.out.println("Insert failure");
         } 
         
     }//GEN-LAST:event_jButton1MouseClicked
+    private boolean isValidEmail(String email) {
+        // Basic email validation using a regular expression
+        String emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$";
+        return email.matches(emailRegex);
+    }
+
+    private boolean isValidDateFormat(String date) {
+        // Basic date format validation (YYYY-MM-DD)
+        String dateRegex = "\\d{4}-\\d{2}-\\d{2}";
+        return date.matches(dateRegex);
+    }
+
+    private boolean isValidPhoneNumber(String phone) {
+        // Basic 10-digit phone number validation
+        String phoneRegex = "\\d{10}";
+        return phone.matches(phoneRegex);
+    }
+    private boolean isValidPassword(String password) {
+    // Minimum length should be 8 characters
+    if (password.length() < 8) {
+        return false;
+    }
+
+    // Check for at least one uppercase, one lowercase, one digit, and one special character
+    String passwordRegex = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]+$";
+    return password.matches(passwordRegex);
+}
 
     /**
      * @param args the command line arguments
