@@ -62,6 +62,8 @@ public class SignUp extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthCareLogo.png"))); // NOI18N
+
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Create your Account");
 
@@ -117,21 +119,19 @@ public class SignUp extends javax.swing.JFrame {
             }
         });
 
-        show.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\show.png")); // NOI18N
+        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/show.png"))); // NOI18N
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 showMousePressed(evt);
             }
         });
 
-        hide.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\hide.png")); // NOI18N
+        hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hide.png"))); // NOI18N
         hide.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 hideMouseClicked(evt);
             }
         });
-
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\healthCareLogo.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -296,7 +296,7 @@ public class SignUp extends javax.swing.JFrame {
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         // TODO add your handling code here:
           AuthDao auth = new AuthDao();
-        String username = nameTextField.getText();
+        String name = nameTextField.getText();
         String email = emailTextField.getText();
         String password = passwordTextField.getText();
         String dob = dateTextField.getText();
@@ -304,7 +304,7 @@ public class SignUp extends javax.swing.JFrame {
         String address = addressTextField.getText();
         
         
-        if (username.isEmpty() || email.isEmpty() || password.isEmpty() || dob.isEmpty() || phone.isEmpty() || address.isEmpty()) {
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty() || dob.isEmpty() || phone.isEmpty() || address.isEmpty()) {
         JOptionPane.showMessageDialog(rootPane, "Please fill in all fields");
         return;
         }
@@ -333,7 +333,7 @@ public class SignUp extends javax.swing.JFrame {
         
         
         
-        SignUpModel sign = new SignUpModel(email, password, username,dob,phone,address);
+        SignUpModel sign = new SignUpModel(name,email, password,dob,phone,address);
         
         boolean isRegistered = auth.SignUp(sign);
         if(isRegistered){
@@ -342,7 +342,7 @@ public class SignUp extends javax.swing.JFrame {
 
             // Open a new instance of the Signup page
             java.awt.EventQueue.invokeLater(() -> {
-                new SignUp().setVisible(true);
+                new LoginPage().setVisible(true);
             });
         }else{
             JOptionPane.showMessageDialog(rootPane, "Registration Failure");

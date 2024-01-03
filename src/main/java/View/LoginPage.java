@@ -4,6 +4,9 @@
  */
 package View;
 
+
+import DAO.AuthDao;
+import Model.LoginModel;
 import javax.swing.JOptionPane;
 
 
@@ -52,14 +55,14 @@ public class LoginPage extends javax.swing.JFrame {
 
         jPanel1.setPreferredSize(new java.awt.Dimension(1000, 600));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\loginPageImage.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/loginPageImage.png"))); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel2.setText("Login to your Account");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\healthCareLogo.png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/healthCareLogo.png"))); // NOI18N
 
         jLabel4.setText("Email");
 
@@ -99,14 +102,14 @@ public class LoginPage extends javax.swing.JFrame {
             }
         });
 
-        show.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\show.png")); // NOI18N
+        show.setIcon(new javax.swing.ImageIcon(getClass().getResource("/show.png"))); // NOI18N
         show.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 showMousePressed(evt);
             }
         });
 
-        hide.setIcon(new javax.swing.ImageIcon("C:\\Users\\Dell\\Documents\\NetBeansProjects\\healthcareWorkflowSystem\\src\\main\\java\\Images_and_icons\\hide.png")); // NOI18N
+        hide.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hide.png"))); // NOI18N
         hide.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 hideMousePressed(evt);
@@ -250,13 +253,22 @@ public class LoginPage extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if(emailEntry.getText().equals("admin") && passwordEntry.getText().equals("admin")){
+
+        LoginModel model = new LoginModel(emailEntry.getText(),passwordEntry.getText());
+        AuthDao dao=new AuthDao();
+        boolean d=dao.Login(model);
+        if(emailEntry.getText().equals("") || passwordEntry.getText().equals("")){
+            JOptionPane.showMessageDialog(rootPane, "Enter email/password.");
+        }
+            
+        if(d==true){
             JOptionPane.showMessageDialog(rootPane, "Login Successful.");
             Dashboard dash = new Dashboard();
             dash.setVisible(true);
             this.dispose();
-            
+        }else{
+            JOptionPane.showMessageDialog(rootPane, "Invalid email/password.");
+//            Dashboard dash = new Dashboard();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
