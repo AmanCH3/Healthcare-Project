@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -258,6 +260,7 @@ public class Dashboard extends javax.swing.JFrame {
         panel.setVisible(true);
         Layer.repaint();
         Layer.revalidate();
+                                                                                                                                                                                                                                                                                                                                                                                                                                    
     }
    
     private void ScheduleBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScheduleBtnMouseClicked
@@ -373,6 +376,17 @@ public class Dashboard extends javax.swing.JFrame {
 //        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoutBlueIcon.png")));
         LogOutPanel logOutPanel = new LogOutPanel();
         switchToPanel(logOutPanel);
+        
+        int choice = JOptionPane.showConfirmDialog(rootPane, "Do you want to log out?", "Log Out", JOptionPane.YES_NO_OPTION);
+        if (choice == JOptionPane.YES_OPTION) {
+            LoginPage login = new LoginPage();
+            login.setVisible(true);
+            this.dispose();
+        }
+           else if(choice == JOptionPane.NO_OPTION){
+                   mainPanel();
+                   }
+        
     }//GEN-LAST:event_LogOutBtnMouseClicked
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked

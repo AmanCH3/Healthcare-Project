@@ -6,7 +6,6 @@ View\SignUp$7.class
 Model\LoginModel.class
 View\AnalyticsPanel.class
 Model\SignUpModel.class
-View\LogOutPanel$2.class
 View\LoginPage$4.class
 View\Dashboard$8.class
 View\LoginPage.class
@@ -19,7 +18,6 @@ View\LoginPage$3.class
 DAO\AuthDao.class
 View\Dashboard$4.class
 View\SignUp$6.class
-View\LogOutPanel$1.class
 View\Dashboard$7.class
 View\InitialPanel.class
 View\LoginPage$6.class
