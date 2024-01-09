@@ -1,17 +1,20 @@
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\LoginPage.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\InitialPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Database\databaseConnection.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\PatientsDetailsPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\SignUp.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\SignUpModel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\MySchedulePanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\PrescriptionPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Controller\UserController.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\LoginModel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\AnalyticsPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\DAO\AuthDao.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\com\mycompany\healthcareworkflowsystem\HealthcareWorkflowSystem.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Database\SQLConnection.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\LogOutPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\Dashboard.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\FeedbacksPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\DAO\AuthDao.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\LogOutPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Database\databaseConnection.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\Dashboard.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\PrescriptionPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\SignUp.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\com\mycompany\healthcareworkflowsystem\HealthcareWorkflowSystem.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\FeedbacksPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\PatientsDetailsPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Model\PatientData.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\AnalyticsPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Controller\UserController.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Model\SignUpModel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Model\LoginModel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\InitialPanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Model\PatientModel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\Database\SQLConnection.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\MySchedulePanel.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\pateintAdd.java
+C:\Users\hp\OneDrive\Clone maven project\Healthcare-Project\src\main\java\View\LoginPage.java
