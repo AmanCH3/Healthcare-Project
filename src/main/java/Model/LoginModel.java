@@ -14,7 +14,7 @@ public class LoginModel {
 
     public LoginModel(String Email, String Password) {
         this.Email = Email;
-        this.Password = Password;
+        this.Password = HashingUtil.hashPassword(Password);
     }
 
     public String getEmail() {

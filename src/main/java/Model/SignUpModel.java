@@ -19,7 +19,7 @@ public class SignUpModel {
     public SignUpModel(String name, String email, String password, String dateOfBirth, String phone, String address) {
         this.name = name;
         this.email = email;
-        this.password = password;
+        this.password = HashingUtil.hashPassword(password);
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.address = address;
