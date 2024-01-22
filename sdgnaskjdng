@@ -1,0 +1,35 @@
+[33mcommit 005610ad6c07bbf8f08c0c5161ab0ab5af785e72[m[33m ([m[1;36mHEAD -> [m[1;32mbinod31[m[33m)[m
+Author: Lucifer <armanachaudhary53@gmail.com>
+Date:   Tue Jan 9 09:17:05 2024 +0545
+
+    Pateint details added and UI of database
+
+[33mcommit ebbc4950c6da51fe4f3f2016af2cbd362831cf66[m[33m ([m[1;31morigin/binod31[m[33m)[m
+Author: BinodLamichhane31 <Lamibinod31@gmail.com>
+Date:   Wed Jan 3 12:49:49 2024 +0545
+
+    Imges problem fixed, Buttons functionality added
+
+[33mcommit 44df60048ed59eb8a3ceda3a469fa058a210e827[m
+Author: BinodLamichhane31 <Lamibinod31@gmail.com>
+Date:   Mon Jan 1 23:06:04 2024 +0545
+
+    Layred panel added,Signup validation for password,email,phone,and date of birth
+
+[33mcommit 4c997441e4d053091daf6704eda09bae890b5b6f[m
+Author: BinodLamichhane31 <Lamibinod31@gmail.com>
+Date:   Thu Dec 28 16:42:13 2023 +0545
+
+    Different icons added in Dashboard
+
+[33mcommit e2389013e523d23602ac1cd2db3cfd9a79353ed7[m
+Author: BinodLamichhane31 <Lamibinod31@gmail.com>
+Date:   Thu Dec 28 16:00:05 2023 +0545
+
+    Images and icons added
+
+[33mcommit 9e18336653c56ad96d1f1924916528ab7332b6b9[m
+Author: BinodLamichhane31 <Lamibinod31@gmail.com>
+Date:   Wed Dec 27 20:47:28 2023 +0545
+
+    Database Connection Done, Login screen improvised, signup page improvised and dashboard frontend partially done

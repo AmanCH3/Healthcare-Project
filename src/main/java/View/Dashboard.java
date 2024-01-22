@@ -6,6 +6,12 @@ package View;
 
 //import Model.PatientData;
 
+import Model.PatientData;
+
+
+
+
+
 
 /**
  *
@@ -27,7 +33,13 @@ public class Dashboard extends javax.swing.JFrame {
         
         
     }
-        
+//    public Dashboard(PatientData patient){
+//        initComponents();
+//        this.patient = patient;
+//        firstLabel.setText(patient.getFname());
+//        lastLabel.setText(patient.getLname());
+//    }
+//        
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -471,6 +483,7 @@ public class Dashboard extends javax.swing.JFrame {
        
     }//GEN-LAST:event_jLabel1MouseClicked
     public void mainPanel(){
+  
      InitialPanel initialPanel = new InitialPanel();
       switchToPanel(initialPanel);
         switchToPanel(initialPanel);
