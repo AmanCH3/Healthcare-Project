@@ -5,9 +5,13 @@
 package View;
 
 
+import Controller.UserController;
 import DAO.AuthDao;
 import Model.LoginModel;
+import Model.SignUpModel;
+import Model.UserData;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 
 /**
@@ -15,6 +19,8 @@ import javax.swing.JOptionPane;
  * @author Dell
  */
 public class LoginPage extends javax.swing.JFrame {
+    
+    
 
     /**
      * Creates new form LoginPage
@@ -251,10 +257,12 @@ public class LoginPage extends javax.swing.JFrame {
         signup.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
-
+  
+    
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
-        LoginModel model = new LoginModel(emailEntry.getText(),passwordEntry.getText());
+        String enteredEmail = emailEntry.getText();
+        UserData.setUserEmail(enteredEmail); 
+        LoginModel model = new LoginModel(enteredEmail,passwordEntry.getText());
         AuthDao dao=new AuthDao();
         boolean d=dao.Login(model);
         if(emailEntry.getText().equals("") || passwordEntry.getText().equals("")){
@@ -262,8 +270,10 @@ public class LoginPage extends javax.swing.JFrame {
         }
             
         if(d==true){
+            
             JOptionPane.showMessageDialog(rootPane, "Login Successful.");
             Dashboard dash = new Dashboard();
+            dash.setUserName();
             dash.setVisible(true);
             this.dispose();
         }else{
@@ -271,7 +281,8 @@ public class LoginPage extends javax.swing.JFrame {
 //            Dashboard dash = new Dashboard();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
+    
     /**
      * @param args the command line arguments
      */

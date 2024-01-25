@@ -4,11 +4,36 @@
  */
 package View;
 
+//import Controller.UserController1;
+
+import Controller.UserController1;
+import DAO.UserDao;
+import Model.HashingUtil;
+import Model.User;
+import Model.UserData;
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import static java.awt.image.ImageObserver.WIDTH;
+import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
+import javax.swing.JOptionPane;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+//import DAO.UserDao;
+
 /**
  *
  * @author Dell
  */
 public class SettingPanel extends javax.swing.JPanel {
+    private static JFrame passwordFrame;
+    private Dashboard dash;
 
     /**
      * Creates new form SettingPanel
@@ -27,9 +52,29 @@ public class SettingPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        changePasswordBtn = new javax.swing.JLabel();
+        deletaButton = new javax.swing.JLabel();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 28)); // NOI18N
         jLabel1.setText("SETTING");
+
+        changePasswordBtn.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
+        changePasswordBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/change_password_icon_154438.png"))); // NOI18N
+        changePasswordBtn.setText("Change Password");
+        changePasswordBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                changePasswordBtnMouseClicked(evt);
+            }
+        });
+
+        deletaButton.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
+        deletaButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/delete_4219.png"))); // NOI18N
+        deletaButton.setText("Delete Account");
+        deletaButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deletaButtonMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -37,20 +82,170 @@ public class SettingPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(122, 122, 122)
-                .addComponent(jLabel1)
-                .addContainerGap(919, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(deletaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(changePasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(848, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1)
-                .addContainerGap(568, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(changePasswordBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(deletaButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(460, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void changePasswordBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_changePasswordBtnMouseClicked
+        // TODO add your handling code here:
+        final JDialog passwordDialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Change Password", true);
+        passwordDialog.setLayout(null);
+        passwordDialog.setSize(500, 400);
+        passwordDialog.setLocationRelativeTo(this); // Center the dialog relative to the parent component
+        JLabel oldPasswordLabel = new JLabel("Old Password:");
+        oldPasswordLabel.setBounds(50, 50, 150, 30);
+        JPasswordField oldPasswordField = new JPasswordField();
+        oldPasswordField.setBounds(200, 50, 200, 30);
+
+        JLabel newPasswordLabel = new JLabel("New Password:");
+        newPasswordLabel.setBounds(50, 100, 150, 30);
+        JPasswordField newPasswordField = new JPasswordField();
+        newPasswordField.setBounds(200, 100, 200, 30);
+
+        JLabel confirmPasswordLabel = new JLabel("Confirm Password:");
+        confirmPasswordLabel.setBounds(50, 150, 150, 30);
+        JPasswordField confirmPasswordField = new JPasswordField();
+        confirmPasswordField.setBounds(200, 150, 200, 30);
+        
+        JButton submitButton = new JButton("Submit");
+        submitButton.setBounds(200, 200, 100, 30);
+        submitButton.addActionListener(new ActionListener() {
+            
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                // Add code here to handle the password change submission
+                // You can retrieve values from text fields (oldPasswordField, newPasswordField, confirmPasswordField)
+                // and perform the necessary logic to change the password
+                String oldPassword = new String(oldPasswordField.getPassword());
+                String newPassword = new String(newPasswordField.getPassword());
+                String confirmPassword = new String(confirmPasswordField.getPassword());
+                String userEmail = UserData.getUserEmail();
+                System.out.println(userEmail); 
+                if (!newPassword.equals(confirmPassword)) {
+                    JOptionPane.showMessageDialog(passwordFrame, "Mismatch between new password and confirm password");
+                    return;
+                }
+
+                    UserDao userDao = new UserDao();
+
+                    User user = userDao.getUserByEmail(userEmail);
+                    if (user != null && user.getPassword().equals(HashingUtil.hashPassword(oldPassword))){
+                        // Update password if old password is correct
+                        UserController1 userController1 = new UserController1(new UserDao(), new UserProfilePanel());
+                        boolean passwordUpdated = userController1.updateUserPassword(userEmail, HashingUtil.hashPassword(newPassword));
+
+                        if (passwordUpdated) {
+                            JOptionPane.showMessageDialog(passwordFrame, "Password Changed");
+                            passwordDialog.dispose();
+                            
+                        } else {
+                            // Handle password update failure (show a message, etc.)
+                            JOptionPane.showMessageDialog(passwordFrame, "Failed to change the password.");
+                        }
+                    } else {
+                        // Handle incorrect old password (show a message, etc.)
+                        JOptionPane.showMessageDialog(passwordFrame, "Incorrect old password");
+                    }
+
+                        }
+                    });
+
+
+            passwordDialog.add(oldPasswordLabel);
+            passwordDialog.add(oldPasswordField);
+            passwordDialog.add(newPasswordLabel);
+            passwordDialog.add(newPasswordField);
+            passwordDialog.add(confirmPasswordLabel);
+            passwordDialog.add(confirmPasswordField);
+            passwordDialog.add(submitButton);
+            passwordDialog.setVisible(true);
+
+        
+    
+        
+    }//GEN-LAST:event_changePasswordBtnMouseClicked
+
+    private void deletaButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletaButtonMouseClicked
+        // TODO add your handling code here:
+       final JDialog deleteDialog = new JDialog((JFrame) SwingUtilities.getWindowAncestor(this), "Delete Account", true);
+        deleteDialog.setLayout(null);
+        deleteDialog.setSize(500, 400);
+        deleteDialog.setLocationRelativeTo(this);
+        JLabel passwordLabel = new JLabel("Password:");
+        passwordLabel.setBounds(50, 50, 150, 30);
+        JPasswordField passwordField = new JPasswordField();
+        passwordField.setBounds(120, 50, 200, 30);
+
+        JButton deleteButton = new JButton("Delete Account");
+        deleteButton.setBounds(120, 100, 150, 30);
+         deleteButton.addActionListener(new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            String enteredPassword = new String(passwordField.getPassword());
+            String userEmail = UserData.getUserEmail();
+
+            // Check if the entered password is correct before proceeding with deletion
+            UserDao userDao = new UserDao();
+            User user = userDao.getUserByEmail(userEmail);
+
+            if (user != null && user.getPassword().equals(HashingUtil.hashPassword(enteredPassword))) {
+                // Password is correct, proceed with deletion
+                UserController1 userController1 = new UserController1(new UserDao(), new UserProfilePanel());
+                boolean userDeleted = userController1.deleteUser(userEmail);
+
+                if (userDeleted) {
+                    // Account deleted successfully
+                    JOptionPane.showMessageDialog(deleteDialog, "Account Deleted");
+                    // Add code to navigate to the login screen or perform any necessary actions
+                    Container topLevelParent = SwingUtilities.getWindowAncestor(SettingPanel.this);
+
+                    // Dispose of the top-level parent (JFrame)
+                    if (topLevelParent instanceof JFrame) {
+                        ((JFrame) topLevelParent).dispose();
+                    }
+
+                    // Close the current dialog after successful deletion
+                    deleteDialog.dispose();
+                    
+                    
+                    LoginPage login = new LoginPage();
+                    login.setVisible(true);
+                } else {
+                    // Handle account deletion failure (show a message, etc.)
+                    JOptionPane.showMessageDialog(deleteDialog, "Failed to delete the account.");
+                }
+            } else {
+                // Incorrect password, show a message
+                JOptionPane.showMessageDialog(deleteDialog, "Incorrect password. Account not deleted.");
+            }
+        }
+    });
+         deleteDialog.add(passwordLabel);
+            deleteDialog.add(passwordField);
+            deleteDialog.add(deleteButton);
+            deleteDialog.setVisible(true);
+        
+    }//GEN-LAST:event_deletaButtonMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel changePasswordBtn;
+    private javax.swing.JLabel deletaButton;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

@@ -303,6 +303,11 @@ public class SignUp extends javax.swing.JFrame {
         String phone = phoneTextField.getText();
         String address = addressTextField.getText();
         
+        if (auth.isEmailRegistered(email)) {
+            JOptionPane.showMessageDialog(rootPane, "Email is already registered. Please use a different email.");
+            return; // Stop the registration process
+        }
+        
         
         if (name.isEmpty() || email.isEmpty() || password.isEmpty() || dob.isEmpty() || phone.isEmpty() || address.isEmpty()) {
         JOptionPane.showMessageDialog(rootPane, "Please fill in all fields");

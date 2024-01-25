@@ -3,20 +3,45 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package View;
+import Model.User;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Point;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
 
 /**
  *
  * @author Dell
  */
 public class UserProfilePanel extends javax.swing.JPanel {
+    private String name;
+    private String email;
+    private String dob;
+    private String phone;
+    private String address;
+    private static JFrame frame;
+    private static JDialog dialog;
+    
+
+    // Constructor or initialization method
+    public UserProfilePanel() {
+        initComponents();
+        
+    }
+    
+    
 
     /**
      * Creates new form UserProfilePanel
      */
-    public UserProfilePanel() {
-        initComponents();
-    }
-
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -26,31 +51,86 @@ public class UserProfilePanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 28)); // NOI18N
-        jLabel1.setText("User Profile");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(92, 92, 92)
-                .addComponent(jLabel1)
-                .addContainerGap(911, Short.MAX_VALUE))
+            .addGap(0, 1150, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel1)
-                .addContainerGap(570, Short.MAX_VALUE))
+            .addGap(0, 630, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
+  
+    public void setUserProfile(User user) {
+    if (user != null) {
+        
+        frame = new JFrame("User Profile");
+        frame.setLayout(null);
+        dialog = new JDialog();
+        dialog.setLayout(null);
+        
+        addTitleLabel("User Profile");
+        addDetailLabelAndField("Name:", user.getName(), 50, 16);
+        addDetailLabelAndField("Email:", user.getEmail(), 90, 16);
+        addDetailLabelAndField("Date of Birth:", user.getDateOfBirth(), 130, 16);
+        addDetailLabelAndField("Phone:", user.getPhone(), 170, 16);
+        addDetailLabelAndField("Address:", user.getAddress(), 210, 16);
+//        frame.setCursor(Toolkit.getDefaultToolkit().createCustomCursor(
+//                new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB),
+//                new Point(0, 0), "hiddenCursor"));
 
+//        frame.setSize(500, 400);
+//        frame.setLocation(300,100);
+//        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//        frame.setVisible(true);
+//        dialog.setSize(500, 400);
+            dialog.setLocation(700,100);
+            dialog.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+            dialog.setModal(true); // Set the dialog as modal
+            dialog.setSize(500, 300);
+            dialog.setVisible(true);
+        
+        
+        }
+    else {
+        // Handle the case when the user is null (not found)
+        JOptionPane.showMessageDialog(this, "User not found.");
+    }
+    
+}
+    private static void addTitleLabel(String title) {
+        JLabel titleLabel = new JLabel(title);
+        Font titleFont = new Font("Arial", Font.BOLD, 20);
+        titleLabel.setFont(titleFont);
+        titleLabel.setBounds(20, 10, 200, 30);
+//        frame.add(titleLabel);
+        dialog.add(titleLabel);
+    }
+    private static void addDetailLabelAndField(String labelText, String value, int yOffset, int fontSize) {
+        JLabel label = new JLabel(labelText);
+        JTextField textField = new JTextField(value);
+
+        Font font = new Font("Arial", Font.PLAIN, fontSize);
+
+        label.setFont(font);
+        textField.setFont(font);
+
+        label.setBounds(20, yOffset, 150, 30);
+        textField.setBounds(130, yOffset, 200, 30);
+        textField.setEnabled(false);
+//        frame.add(label);
+//        frame.setUndecorated(true); // Remove title bar
+//        frame.add(textField);
+        dialog.add(label);
+        dialog.add(textField);
+    }
+    }
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
-}
+

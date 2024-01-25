@@ -9,6 +9,7 @@ import Model.LoginModel;
 import Model.PatientData ;
 import Model.PatientModel;
 import Model.SignUpModel;
+import Model.User;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -25,7 +26,7 @@ public class AuthDao extends SQLConnection {
     Connection conn = openConnection();
     ResultSet result=null;
     
-          public boolean SignUp(SignUpModel user){
+    public boolean SignUp(SignUpModel user){
     try{
 //           PreparedStatement ps = null;
 //           Connection conn = openConnection();
@@ -78,11 +79,11 @@ public class AuthDao extends SQLConnection {
         } catch (SQLException ex) {
             Logger.getLogger(AuthDao.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return false;
-        
-        
-        
+        return false;  
     }
+ 
+    
+
     public boolean AddPatient(PatientModel patient){
         try{
             String sql = " insert into Patients(Firstname ,Lastname ,Age,DateOfBirth,Gender, Contact, Email ,Address) values (?,?,?,?,?,?,?,?)";
@@ -114,6 +115,32 @@ public class AuthDao extends SQLConnection {
         
         
     }
+    public boolean isEmailRegistered(String email) {
+        try {
+            String query = "SELECT COUNT(*) FROM user_registration WHERE Email = ?";
+            ps = conn.prepareStatement(query);
+            ps.setString(1, email);
+            result = ps.executeQuery();
+
+            if (result.next()) {
+                int count = result.getInt(1);
+                return count > 0; // If count is greater than 0, the email is registered
+            }
+
+            return false;
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception appropriately
+            return false;
+        } finally {
+            // Close resources (ResultSet and PreparedStatement) in reverse order
+            try {
+                if (result != null) result.close();
+                if (ps != null) ps.close();
+            } catch (SQLException e) {
+                e.printStackTrace(); // Handle the exception appropriately
+            }
+        }
+    }
     public PatientData patient(PatientModel patient){
 try{
 PreparedStatement ps = null ;
@@ -143,6 +170,7 @@ if (result != null && result.next() != false){
     
     
     
+    
     PatientData Patient =  new PatientData(Firstname , Lastname ,age, dateOfbirth, gender,contact,Email, Address);
     return Patient;
 }
@@ -157,4 +185,5 @@ else{
 }
     
 }
+    
 }

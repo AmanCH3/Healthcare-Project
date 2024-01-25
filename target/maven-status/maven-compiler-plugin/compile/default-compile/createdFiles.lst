@@ -2,6 +2,7 @@ View\SettingPanel.class
 View\PatientsDetailsPanel$2.class
 View\Dashboard$2.class
 View\Dashboard$5.class
+Model\UserData.class
 View\SignUp$3.class
 View\LoginPage$1.class
 View\SignUp$7.class
@@ -9,6 +10,7 @@ Model\LoginModel.class
 View\AnalyticsPanel.class
 Model\SignUpModel.class
 View\pateintAdd$4.class
+View\SettingPanel$4.class
 View\LoginPage$4.class
 View\Dashboard$8.class
 View\Dashboard$10.class
@@ -16,6 +18,7 @@ View\LoginPage.class
 View\PatientsDetailsPanel$1.class
 Model\HashingUtil.class
 View\Dashboard$1.class
+View\SettingPanel$1.class
 Controller\UserController.class
 View\MySchedulePanel.class
 View\SignUp.class
@@ -26,10 +29,12 @@ View\Dashboard$4.class
 View\pateintAdd$3.class
 View\UserProfilePanel.class
 View\SignUp$6.class
+DAO\UserDao.class
 View\Dashboard$7.class
 View\InitialPanel.class
 View\LoginPage$6.class
 View\SignUp$8.class
+View\SettingPanel$2.class
 View\Dashboard.class
 View\pateintAdd$2.class
 View\Dashboard$3.class
@@ -44,10 +49,14 @@ View\Dashboard$6.class
 View\LoginPage$2.class
 View\PatientsDetailsPanel.class
 View\FeedbacksPanel.class
+Controller\UserController1.class
 Model\PatientData.class
 View\pateintAdd$1.class
 Database\databaseConnection.class
 View\LoginPage$5.class
 View\SignUp$1.class
+Model\User.class
 View\Dashboard$9.class
 View\LogOutPanel.class
+View\FeedbacksPanel$1.class
+View\SettingPanel$3.class

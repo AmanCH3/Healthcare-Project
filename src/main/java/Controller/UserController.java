@@ -5,6 +5,9 @@
 package Controller;
 
 import DAO.AuthDao;
+import DAO.UserDao;
+import Model.LoginModel;
+import View.UserProfilePanel;
 
 /**
  *
@@ -12,7 +15,9 @@ import DAO.AuthDao;
  */
 public class UserController {
      private AuthDao authDao;
-    public UserController(){
+     private LoginModel loginModel;
+
+    public UserController(UserDao userDao, UserProfilePanel userProfilePanel){
         this.authDao = new AuthDao();
     }
     
@@ -23,5 +28,6 @@ public class UserController {
     public boolean LoginModel(String Email, String Password){
         return authDao.LoginUp(Email,Password);
 }
+  
     
 }

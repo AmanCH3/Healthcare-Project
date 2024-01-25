@@ -5,11 +5,16 @@
 package View;
 
 
+import Controller.UserController1;
+import DAO.UserDao;
+import Model.LoginModel;
+import Model.User;
+import Model.UserData;
 import javax.swing.JOptionPane;
 
 //import Model.PatientData;
 
-import Model.PatientData;
+
 
 
 /**
@@ -17,7 +22,7 @@ import Model.PatientData;
  * @author Dell
  */
 public class Dashboard extends javax.swing.JFrame {
-
+    
 //    private PatientData PatientData;
 
 
@@ -56,6 +61,7 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        nameLabelDash = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -98,6 +104,8 @@ public class Dashboard extends javax.swing.JFrame {
             }
         });
 
+        nameLabelDash.setFont(new java.awt.Font("Segoe UI Semibold", 0, 16)); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -111,7 +119,9 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(16, 16, 16)
                 .addComponent(jLabel11)
-                .addGap(171, 171, 171))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nameLabelDash, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(19, 19, 19))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,10 +129,11 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(16, 16, 16)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(nameLabelDash, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)))
                 .addGap(8, 8, 8))
         );
 
@@ -525,8 +536,17 @@ public class Dashboard extends javax.swing.JFrame {
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
         UserProfilePanel userProfilePanel = new UserProfilePanel();
-        switchToPanel(userProfilePanel);
+        
+        String userEmail =UserData.getUserEmail(); // Retrieve the entered email
+        UserController1 userController1= new UserController1(new UserDao(), new UserProfilePanel());
+        userController1.displayUserInfo(userEmail);
+//        switchToPanel(userProfilePanel); 
     }//GEN-LAST:event_jLabel11MouseClicked
+    public void setUserName() {
+        UserDao userDao = new UserDao();
+        User user = userDao.getUserByEmail(UserData.getUserEmail());
+        nameLabelDash.setText(user.getName());
+    }
     public void mainPanel(){
   
      InitialPanel initialPanel = new InitialPanel();
@@ -537,11 +557,12 @@ public class Dashboard extends javax.swing.JFrame {
         this.dispose();
     }
     
-    
+   
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -573,7 +594,9 @@ public class Dashboard extends javax.swing.JFrame {
             
             }
         });
+        
     }
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -599,5 +622,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JLabel lastLabel;
+    private javax.swing.JLabel nameLabelDash;
     // End of variables declaration//GEN-END:variables
 }
