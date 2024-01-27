@@ -6,6 +6,7 @@ package DAO;
 
 import Database.SQLConnection;
 import Model.LoginModel;
+import Model.MedicineModel;
 import Model.PatientData ;
 import Model.PatientModel;
 import Model.SignUpModel;
@@ -185,5 +186,77 @@ else{
 }
     
 }
+       public MedicineModel medicine(MedicineModel medicine){
+try{
+PreparedStatement ps = null ;
+Connection conn = openConnection();
+String sql = "SELECt * FROM medicine Where Prescribe_patientID = ? ,medicine_name = ?, dosage = ? , Duration = ? ,Instruction = ?";
+ps = conn.prepareStatement(sql);
+ps.setInt(1,medicine.getPatient());
+           ps.setString(2,medicine.getMedicine());
+           ps.setString(3,medicine.getDosage());
+           ps.setString(4,medicine.getDuration());
+           ps.setString(5,medicine.getInstruction());
+
+
+
+
+ResultSet result = ps.executeQuery();
+if (result != null && result.next() != false){
+    //get data here
+    int Patient = result.getInt("patientID");
+    String medicine_name = result.getString("medicine_name");
+    String dosage = result.getString("dosage");
+    String duration = result.getString ("duration");
+    String instruction = result.getString ("instruction");
+
+
+
+    
+    
+    
+    
+    MedicineModel Md =  new MedicineModel(Patient, medicine_name,dosage, duration, instruction);
+    return Md;
+}
+else{
+   return null ;
+}
+
+ 
+}catch (Exception exception){
+    return null ;
+    
+}
+    
+} 
+      public boolean Addmedicine(MedicineModel medicine){
+          try{
+            String sql = " insert into medicine(Prescribe_patientId,medicine_name,dosage,Duration,Instruction) values (?,?,?,?,?)";
+            ps = conn.prepareStatement( sql);
+  
+          ps.setInt(1,medicine.getPatient());
+           ps.setString(2,medicine.getMedicine());
+           ps.setString(3,medicine.getDosage());
+           ps.setString(4,medicine.getDuration());
+           ps.setString(5,medicine.getInstruction());
+         
+            
+           
+//           // to check the insertion on the table
+           int result = ps.executeUpdate();
+            if(result == -1){
+                return false;
+            }else{
+                return true;
+            }
+        }catch(Exception e){
+            System.out.println(e);
+            return false;
+        }
+        
+          
+          
+      }    
     
 }

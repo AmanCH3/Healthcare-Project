@@ -21,46 +21,46 @@ import javax.swing.table.DefaultTableModel;
  */
 public final class InitialPanel extends javax.swing.JPanel {
 
-    PatientData  Patient = null;
+//    PatientData  Patient = null;
 
     /**
      * Creates new form InitialPanel
      */
     public InitialPanel() {
         initComponents();
-        tableData();
+//        tableData();
         
     }
     public void tableData() {
-        try {
-            String query = "SELECT * FROM patients";
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthproject", "root","@#Sunshine111");
-            Statement statement = connection.createStatement();
-            ResultSet rs = statement.executeQuery(query);
-            jTable1.setModel(buildTableModel(rs));
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage());
-        }
-    }
-    public static DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
-        ResultSetMetaData metaData = rs.getMetaData();
-        // names of columns
-        Vector<String> columnNames = new Vector<String>();
-        int columnCount = metaData.getColumnCount();
-        for (int column = 1; column <= columnCount; column++) {
-            columnNames.add(metaData.getColumnName(column));
-        }
-        // data of the table
-        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
-        while (rs.next()) {
-            Vector<Object> vector = new Vector<Object>();
-            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-                vector.add(rs.getObject(columnIndex));
-            }
-            data.add(vector);
-        }
-        return new DefaultTableModel(data, columnNames);
+//        try {
+//            String query = "SELECT * FROM patients";
+//            Class.forName("com.mysql.cj.jdbc.Driver");
+//            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/healthproject", "root","@#Sunshine111");
+//            Statement statement = connection.createStatement();
+//            ResultSet rs = statement.executeQuery(query);
+//            jTable1.setModel(buildTableModel(rs));
+//        } catch (Exception ex) {
+//            JOptionPane.showMessageDialog(null, ex.getMessage());
+//        }
+//    }
+//    public static DefaultTableModel buildTableModel(ResultSet rs) throws SQLException {
+//        ResultSetMetaData metaData = rs.getMetaData();
+//        // names of columns
+//        Vector<String> columnNames = new Vector<String>();
+//        int columnCount = metaData.getColumnCount();
+//        for (int column = 1; column <= columnCount; column++) {
+//            columnNames.add(metaData.getColumnName(column));
+//        }
+//        // data of the table
+//        Vector<Vector<Object>> data = new Vector<Vector<Object>>();
+//        while (rs.next()) {
+//            Vector<Object> vector = new Vector<Object>();
+//            for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+//                vector.add(rs.getObject(columnIndex));
+//            }
+//            data.add(vector);
+//        }
+//        return new DefaultTableModel(data, columnNames);
     }
 //    public InitialPanel(PatientData Patient) {
 //        initComponents();
@@ -138,20 +138,31 @@ public final class InitialPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("SimSun", 0, 20)); // NOI18N
         jLabel4.setText(" Appointments : ");
 
+        jTable1.setAutoCreateRowSorter(true);
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"Aman Chaudhary", "18", "Male", "Cancer"},
+                {"Biwash Ghimire", "20", "Male", "Heart Failure"},
+                {"AAyush Sherstha", "20", "Female", "Fracture"},
+                {"Binod Lamichanne", "21", "Male", "Fracture"},
+                {"Aayam Bhattrai", "19", "Male", null}
             },
             new String [] {
-                "Name", "Age", "Gender", "DateofBirth"
+                "NAME", "AGE", "GENDER", "DAIGNOSE"
             }
         ));
         jTable1.setRowHeight(30);
-        jTable1.setShowGrid(true);
+        jTable1.setSelectionBackground(new java.awt.Color(102, 153, 255));
+        jTable1.setSelectionForeground(new java.awt.Color(204, 204, 204));
+        jTable1.setShowGrid(false);
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(15);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(15);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(15);
+            jTable1.getColumnModel().getColumn(3).setPreferredWidth(12);
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -164,17 +175,19 @@ public final class InitialPanel extends javax.swing.JPanel {
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(95, 95, 95)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 564, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(101, 101, 101)
-                                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(94, 94, 94)
-                                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(415, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(101, 101, 101)
+                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(94, 94, 94)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(403, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 789, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,8 +202,8 @@ public final class InitialPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
                 .addComponent(jLabel4)
                 .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(117, 117, 117))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(55, 55, 55))
         );
     }// </editor-fold>//GEN-END:initComponents
 

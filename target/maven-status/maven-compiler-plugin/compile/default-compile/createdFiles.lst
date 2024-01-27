@@ -21,6 +21,7 @@ View\Dashboard$1.class
 View\SettingPanel$1.class
 Controller\UserController.class
 View\MySchedulePanel.class
+View\PrescriptionPanel$1.class
 View\SignUp.class
 Database\SQLConnection.class
 View\LoginPage$3.class
@@ -39,6 +40,7 @@ View\Dashboard.class
 View\pateintAdd$2.class
 View\Dashboard$3.class
 com\mycompany\healthcareworkflowsystem\HealthcareWorkflowSystem.class
+Model\MedicineModel.class
 View\pateintAdd.class
 View\SignUp$2.class
 View\SignUp$5.class
@@ -53,6 +55,7 @@ Controller\UserController1.class
 Model\PatientData.class
 View\pateintAdd$1.class
 Database\databaseConnection.class
+View\PrescriptionPanel$2.class
 View\LoginPage$5.class
 View\SignUp$1.class
 Model\User.class

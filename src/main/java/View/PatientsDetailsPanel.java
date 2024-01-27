@@ -76,7 +76,6 @@ public class PatientsDetailsPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(255, 255, 255));
 
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(0, 102, 204));
         jButton1.setText("Add Patients");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -87,7 +86,7 @@ public class PatientsDetailsPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Yu Gothic Medium", 0, 28)); // NOI18N
         jLabel1.setText("Patient Details");
 
-        jTable1.setForeground(new java.awt.Color(51, 102, 255));
+        jTable1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null},
@@ -105,7 +104,7 @@ public class PatientsDetailsPanel extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "FirstName", "Lastname", "Age", "Gender", "DateOfBirth", "Contact", "Email", "Address"
+                "FIRSTNAME", "LASTNAME", "AGE", "GENDER", "DOB", "CONTACT", "EMAIL", "ADDRESS"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -118,7 +117,9 @@ public class PatientsDetailsPanel extends javax.swing.JPanel {
         });
         jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTable1.setRowHeight(30);
-        jTable1.setShowGrid(true);
+        jTable1.setSelectionBackground(new java.awt.Color(102, 153, 255));
+        jTable1.setSelectionForeground(new java.awt.Color(255, 255, 255));
+        jTable1.setShowGrid(false);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
