@@ -139,8 +139,7 @@ public class ForgotPassword1 extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(answerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(answerTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(37, 37, 37)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
@@ -176,7 +175,7 @@ public class ForgotPassword1 extends javax.swing.JFrame {
         
         try{
             String username = "root";
-            String password = "binod";
+            String password = "@#Sunshine111";
             String database = "healthproject"; // database name
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection;
@@ -210,7 +209,7 @@ public class ForgotPassword1 extends javax.swing.JFrame {
         
         try{
             String username = "root";
-            String password = "binod";
+            String password = "@#Sunshine111";
             String database = "healthproject"; // database name
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection;
