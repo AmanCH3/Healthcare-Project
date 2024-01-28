@@ -2,6 +2,7 @@ C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\PatientData.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\SignUpModel.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\User.java
+C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\ForgotPassword1.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\UserProfilePanel.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Controller\UserController.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\HashingUtil.java
@@ -9,6 +10,7 @@ C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\DAO\AuthDao.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\com\mycompany\healthcareworkflowsystem\HealthcareWorkflowSystem.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\Dashboard.java
+C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\MedicineModel.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\FeedbacksPanel.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\pateintAdd.java
 C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Controller\UserController1.java

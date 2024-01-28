@@ -83,6 +83,11 @@ public class LoginPage extends javax.swing.JFrame {
         jLabel6.setBackground(new java.awt.Color(255, 255, 255));
         jLabel6.setForeground(new java.awt.Color(0, 0, 255));
         jLabel6.setText("Forgot Password?");
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
         rememberCheck.setBackground(new java.awt.Color(255, 255, 255));
         rememberCheck.setText("Remember Me");
@@ -281,6 +286,13 @@ public class LoginPage extends javax.swing.JFrame {
 //            Dashboard dash = new Dashboard();
         }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+         ForgotPassword1 fg = new ForgotPassword1();
+        fg.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jLabel6MouseClicked
    
     
     /**

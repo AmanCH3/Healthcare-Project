@@ -2,6 +2,7 @@ View\SettingPanel.class
 View\PatientsDetailsPanel$2.class
 View\Dashboard$2.class
 View\Dashboard$5.class
+View\ForgotPassword1.class
 Model\UserData.class
 View\SignUp$3.class
 View\LoginPage$1.class
@@ -15,12 +16,15 @@ View\LoginPage$4.class
 View\Dashboard$8.class
 View\Dashboard$10.class
 View\LoginPage.class
+View\LoginPage$7.class
+View\ForgotPassword1$2.class
 View\PatientsDetailsPanel$1.class
 Model\HashingUtil.class
 View\Dashboard$1.class
 View\SettingPanel$1.class
 Controller\UserController.class
 View\MySchedulePanel.class
+View\PrescriptionPanel$1.class
 View\SignUp.class
 Database\SQLConnection.class
 View\LoginPage$3.class
@@ -31,6 +35,7 @@ View\UserProfilePanel.class
 View\SignUp$6.class
 DAO\UserDao.class
 View\Dashboard$7.class
+View\ForgotPassword1$1.class
 View\InitialPanel.class
 View\LoginPage$6.class
 View\SignUp$8.class
@@ -39,9 +44,11 @@ View\Dashboard.class
 View\pateintAdd$2.class
 View\Dashboard$3.class
 com\mycompany\healthcareworkflowsystem\HealthcareWorkflowSystem.class
+Model\MedicineModel.class
 View\pateintAdd.class
 View\SignUp$2.class
 View\SignUp$5.class
+View\ForgotPassword1$4.class
 View\PrescriptionPanel.class
 Model\PatientModel.class
 View\SignUp$4.class
@@ -53,9 +60,11 @@ Controller\UserController1.class
 Model\PatientData.class
 View\pateintAdd$1.class
 Database\databaseConnection.class
+View\PrescriptionPanel$2.class
 View\LoginPage$5.class
 View\SignUp$1.class
 Model\User.class
+View\ForgotPassword1$3.class
 View\Dashboard$9.class
 View\LogOutPanel.class
 View\FeedbacksPanel$1.class
