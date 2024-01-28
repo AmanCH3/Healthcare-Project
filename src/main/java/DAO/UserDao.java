@@ -20,7 +20,7 @@ public class UserDao extends SQLConnection {
     PreparedStatement ps = null;
     Connection conn = openConnection();
     ResultSet result=null;
-    public User getUserByEmail(String email) {  //testing##########################################################        
+    public User getUserByEmail(String email) {          
         try {
             // Execute SQL query to retrieve user details by email
             String query = "SELECT * FROM user_registration WHERE email=?";
