@@ -384,12 +384,7 @@ public class Dashboard extends javax.swing.JFrame {
         AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
-//        ScheduleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/MyScheduleBlueIcon.png")));
-//        PrescriptionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prescriptionIcon")));
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/detailsIcon.png")));
-//        AnalyticsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analyticsIcon.png")));
-//        FeedbackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feedbackIcon.png")));
-//        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logOutIcon.png")));
+
         MySchedulePanel mySchedulePanel = new MySchedulePanel();
         switchToPanel(mySchedulePanel);
         
@@ -403,12 +398,7 @@ public class Dashboard extends javax.swing.JFrame {
         AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
-//        ScheduleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myScheduleIcon.png")));
-//        PrescriptionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/PrescriptionBlueIcon.png")));
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/detailsIcon.png")));
-//        AnalyticsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analyticsIcon.png")));
-//        FeedbackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feedbackIcon.png")));
-//        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logOutIcon.png")));
+
         PrescriptionPanel prescriptionPanel = new PrescriptionPanel();
         switchToPanel(prescriptionPanel);
     }//GEN-LAST:event_PrescriptionBtnMouseClicked
@@ -421,16 +411,9 @@ public class Dashboard extends javax.swing.JFrame {
         AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
-//        ScheduleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myScheduleIcon.png")));
-//        PrescriptionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prescriptionIcon.png")));
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/DetailsBlueIcon.png")));
-//        AnalyticsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analyticsIcon.png")));
-//        FeedbackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feedbackIcon.png")));
-//        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logOutIcon.png")));
-        
+
         PatientsDetailsPanel detailsPanel = new PatientsDetailsPanel();
         switchToPanel(detailsPanel);
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon("path_to_black_icon"));
        
     }//GEN-LAST:event_DetailsBtnMouseClicked
 
@@ -442,15 +425,6 @@ public class Dashboard extends javax.swing.JFrame {
         AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 255));
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
-//        ScheduleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myScheduleIcon.png")));
-//        PrescriptionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prescriptionIcon.png")));
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/detailsIcon.png")));
-//        AnalyticsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/AnalyticsBlueIcon.png")));
-//        FeedbackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feedbackIcon.png")));
-//        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logOutIcon.png")));
-
-        
-
         AnalyticsPanel analyticsPanel = new AnalyticsPanel();
         switchToPanel(analyticsPanel);
     }//GEN-LAST:event_AnalyticsBtnMouseClicked
@@ -463,12 +437,7 @@ public class Dashboard extends javax.swing.JFrame {
         AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 255));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 0));
-//        ScheduleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myScheduleIcon.png")));
-//        PrescriptionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prescriptionIcon.png")));
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/detailsIcon.png")));
-//        AnalyticsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analyticsIcon.png")));
-//        FeedbackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/FeedbackBackIcon.png")));
-//        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logOutIcon.png")));
+
         FeedbacksPanel feedbacksPanel = new FeedbacksPanel();
         switchToPanel(feedbacksPanel);
         
@@ -482,12 +451,6 @@ public class Dashboard extends javax.swing.JFrame {
         AnalyticsBtn.setForeground(new java.awt.Color(0, 0, 0));
         FeedbackBtn.setForeground(new java.awt.Color(0, 0, 0));
         LogOutBtn.setForeground(new java.awt.Color(0, 0, 255));
-//        ScheduleBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/myScheduleIcon.png")));
-//        PrescriptionBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/prescriptionIcon.png")));
-//        DetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/detailsIcon.png")));
-//        AnalyticsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/analyticsIcon.png")));
-//        FeedbackBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/feedbackIcon.png")));
-//        LogOutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/LogoutBlueIcon.png")));
         LogOutPanel logOutPanel = new LogOutPanel();
         switchToPanel(logOutPanel);
         
