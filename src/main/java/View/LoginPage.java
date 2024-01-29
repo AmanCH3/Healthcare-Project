@@ -289,7 +289,11 @@ public class LoginPage extends javax.swing.JFrame {
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
+<<<<<<< HEAD
         ForgotPassword1 fg = new ForgotPassword1();
+=======
+         ForgotPassword1 fg = new ForgotPassword1();
+>>>>>>> 2a9fe80790d571f11d204d8d746ce5c31ad24890
         fg.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
