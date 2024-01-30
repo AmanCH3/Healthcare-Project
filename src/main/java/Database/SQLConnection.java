@@ -18,7 +18,8 @@ public class SQLConnection implements databaseConnection{
     public Connection openConnection() {
          try{
             String username = "root";
-            String password = "binod";
+            String password = "@#Sunshine111"
+                    + "";
             String database = "healthproject"; // database name
             Class.forName("com.mysql.jdbc.Driver");
             Connection connection;

@@ -55,6 +55,8 @@ public class SettingPanel extends javax.swing.JPanel {
         changePasswordBtn = new javax.swing.JLabel();
         deletaButton = new javax.swing.JLabel();
 
+        setBackground(new java.awt.Color(241, 241, 241));
+
         jLabel1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 28)); // NOI18N
         jLabel1.setText("SETTING");
 

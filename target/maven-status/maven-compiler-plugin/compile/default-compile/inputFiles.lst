@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\Model\MedicineModel.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\Controller\UserController1.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\Database\databaseConnection.java
@@ -14,7 +13,6 @@ C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\SettingPanel.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\AnalyticsPanel.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\UserProfilePanel.java
-C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\ForgotPassword1.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\MySchedulePanel.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\Model\PatientData.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\PrescriptionPanel.java
@@ -28,34 +26,3 @@ C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\DAO\U
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\View\pateintAdd.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\Controller\UserController.java
 C:\Users\hp\OneDrive\Clone Health project\Healthcare-Project\src\main\java\Model\UserData.java
-=======
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\LoginPage.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\PatientData.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\SignUpModel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\User.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\ForgotPassword1.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\UserProfilePanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Controller\UserController.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\HashingUtil.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\PatientModel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\DAO\AuthDao.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\com\mycompany\healthcareworkflowsystem\HealthcareWorkflowSystem.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\Dashboard.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\MedicineModel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\FeedbacksPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\pateintAdd.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Controller\UserController1.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\InitialPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Database\databaseConnection.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\PatientsDetailsPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\SignUp.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\MySchedulePanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\PrescriptionPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\SettingPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\LoginModel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\AnalyticsPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Database\SQLConnection.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\View\LogOutPanel.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\Model\UserData.java
-C:\Users\Dell\Documents\NetBeansProjects\healthcareWorkflowSystem\src\main\java\DAO\UserDao.java
->>>>>>> 2a9fe80790d571f11d204d8d746ce5c31ad24890

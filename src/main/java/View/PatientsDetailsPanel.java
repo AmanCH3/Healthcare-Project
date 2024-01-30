@@ -73,7 +73,7 @@ public class PatientsDetailsPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(241, 241, 241));
 
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         jButton1.setText("Add Patients");
@@ -157,7 +157,11 @@ public class PatientsDetailsPanel extends javax.swing.JPanel {
         pateintAdd pA = new pateintAdd();
         pA.setVisible(true);
         
+        
     }//GEN-LAST:event_jButton1MouseClicked
+public void updateTable() {
+    tableData();
+}
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

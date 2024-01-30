@@ -7,6 +7,7 @@ package View;
 import DAO.AuthDao;
 import Model.PatientModel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -57,8 +58,9 @@ public class pateintAdd extends javax.swing.JFrame {
         jLabel7.setText("jLabel7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(241, 241, 241));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(241, 241, 241));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setText("Add Patients");
@@ -245,8 +247,9 @@ public class pateintAdd extends javax.swing.JFrame {
       PatientModel pd = new PatientModel(firstname, lastname,Age,date,gender,contact,email,address);       
         boolean check = auth1.AddPatient(pd);
       if(check == true){
-           JOptionPane.showMessageDialog(rootPane, "Register Successful");
-       }else{
+           JOptionPane.showMessageDialog(rootPane, "Register Successful");       
+        this.dispose();
+        }else{
           JOptionPane.showMessageDialog(rootPane, "Register Failure");
       System.out.println("Insert failure");
       } 

@@ -31,7 +31,6 @@ public class Dashboard extends javax.swing.JFrame {
      */
     public Dashboard() {
         initComponents();
-        this.setExtendedState(Dashboard.MAXIMIZED_BOTH);
         mainPanel();
      
         
@@ -366,7 +365,7 @@ public class Dashboard extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void switchToPanel(javax.swing.JPanel panel) {
+    void switchToPanel(javax.swing.JPanel panel) {
         Layer.removeAll();
         Layer.add(panel);
 //        panel.setBounds(0, 0, Layer.getWidth(), Layer.getHeight());
