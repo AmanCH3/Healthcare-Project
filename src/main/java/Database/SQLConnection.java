@@ -14,6 +14,8 @@ import java.sql.ResultSet;
  */
 public class SQLConnection implements databaseConnection{
 
+ 
+    
     @Override
     public Connection openConnection() {
          try{

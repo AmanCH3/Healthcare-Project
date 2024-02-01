@@ -49,8 +49,8 @@ public class pateintAdd extends javax.swing.JFrame {
         dateTextField = new javax.swing.JTextField();
         genderTextField = new javax.swing.JTextField();
         contactTextField = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
-        jTextField8 = new javax.swing.JTextField();
+        emailTxt = new javax.swing.JTextField();
+        addTxt = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
 
         jLabel6.setText("jLabel6");
@@ -106,9 +106,9 @@ public class pateintAdd extends javax.swing.JFrame {
 
         contactTextField.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTextField7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        emailTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTextField8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        addTxt.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jButton1.setFont(new java.awt.Font("Segoe UI Semibold", 0, 14)); // NOI18N
         jButton1.setText("Add patients");
@@ -149,8 +149,8 @@ public class pateintAdd extends javax.swing.JFrame {
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(genderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
-                                                .addComponent(jTextField7)
+                                                .addComponent(addTxt, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                                                .addComponent(emailTxt)
                                                 .addComponent(contactTextField))))
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -201,11 +201,11 @@ public class pateintAdd extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(emailText)
-                    .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(emailTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addressTextField)
-                    .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(jButton1)
                 .addGap(34, 34, 34))
@@ -240,8 +240,8 @@ public class pateintAdd extends javax.swing.JFrame {
        String date = dateTextField.getText();
        String gender = genderTextField.getText();
        String contact = contactTextField.getText();
-       String email = emailText.getText();
-       String address = addressTextField.getText();
+       String email = emailTxt.getText();
+       String address = addTxt.getText();
           
       
       PatientModel pd = new PatientModel(firstname, lastname,Age,date,gender,contact,email,address);       
@@ -300,11 +300,13 @@ public class pateintAdd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addTxt;
     private javax.swing.JLabel addressTextField;
     private javax.swing.JTextField ageTextField;
     private javax.swing.JTextField contactTextField;
     private javax.swing.JTextField dateTextField;
     private javax.swing.JLabel emailText;
+    private javax.swing.JTextField emailTxt;
     private javax.swing.JTextField firstTextField;
     private javax.swing.JTextField genderTextField;
     private javax.swing.JButton jButton1;
@@ -318,8 +320,6 @@ public class pateintAdd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     private javax.swing.JTextField lastTextField;
     // End of variables declaration//GEN-END:variables
 }
